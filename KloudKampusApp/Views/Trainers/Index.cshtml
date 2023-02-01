@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Welcome to Trainer Page of KloudKampus</h1>
+<p> @ViewData["Name"]</p>
+
+<ul>
+@foreach(var item in ViewBag.Names)
+{
+    <li>@item</li>
+}
+</ul>
+
+
+<p>Display using the View Data</p>
+<ul>
+    @foreach(var item in (List<string>)ViewData["Names"])
+    {
+        <li>@item</li>
+    }
+</ul>
+
+<table class="w-25 table table-bordered bg-success">
+    <tr>
+        <th>Trainer Name</th>
+        <th>Skills</th>
+    </tr>
+    @foreach(var item in (List<Trainer>)ViewData["Trainers"])
+    {
+        <tr>
+            <td>@item.TrainerName</td>
+            <td>@item.Skills</td>
+        </tr>
+    }
+</table>
