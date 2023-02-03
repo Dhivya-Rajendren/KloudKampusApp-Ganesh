@@ -1,0 +1,25 @@
+﻿@model IEnumerable<KloudKampusApp.Models.Course>
+
+
+    <p>Course Details in KloudKampus </p>
+
+    <table class="table table-bordered">
+<tr>
+    <th>
+        Course Name
+    </th>
+    <th>Category</th>
+    <th> Cost</th>
+</tr>
+
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.CourseName</td>
+        <td>@item.Category</td>
+        <td>@item.Price</td>
+        </tr>
+}
+
+</table>

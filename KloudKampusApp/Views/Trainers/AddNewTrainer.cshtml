@@ -1,0 +1,22 @@
+﻿@model KloudKampusApp.Models.Trainer
+
+
+<form method="post">
+    <div asp-validation-summary=ModelOnly></div>
+
+    <input type="text" placeholder="Enter the Trainer Id" id="txtTrainerId"  asp-for=TrainerId/>
+    <br/>
+        <input type="text" placeholder="Enter the Trainer Name" id="txtTrainerName" asp-for=TrainerName/>
+        <span asp-validation-for=TrainerName  ></span>
+        <br/>
+
+            <input type="text" placeholder="Enter the Experience" id="txtTrainerExperience" asp-for=YearsOfExperience/>
+            <br/>
+                <input type="text" placeholder="Enter the Skill" id="txtSkills" asp-for=Skills/>
+                <br/>
+                    <br/>
+                    <input type="submit" id="btnAddNew" value="Add New Trainer" class="btn btn-primary"/>
+
+
+
+</form>
