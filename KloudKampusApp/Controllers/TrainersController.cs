@@ -51,12 +51,24 @@ namespace KloudKampusApp.Controllers
 
         public IActionResult DeleteTrainer(int trainerId)
         {
-            DBHelper db = new DBHelper();
-            db.DeleteTrainer(trainerId);
-            return RedirectToAction("Index");
+            Trainer trainer = new Trainer();
 
+            foreach (Trainer item in trainers)
+            {
+                if (item.TrainerId == trainerId)
+                {
+                    trainer = item;
+                }
+            }
+            return View(trainer);
         }
     
+        public IActionResult ConfirmDelete(int trainerId)
+        {
+            DBHelper repo = new DBHelper();
+            repo.DeleteTrainer(trainerId);
+            return RedirectToAction("Index");
+        }
     }
 }
 

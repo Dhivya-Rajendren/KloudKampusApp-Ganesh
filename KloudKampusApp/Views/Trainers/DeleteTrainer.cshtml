@@ -1,6 +1,6 @@
 ﻿@model KloudKampusApp.Models.Trainer
 
-
 <partial name="_TrainerPartialView" />
 
+<a asp-action="ConfirmDelete" asp-route-trainerId=@Model.TrainerId class="btn btn-danger">Confirm Delete</a>
 <a asp-action="Index" class="btn btn-primary">Back To List</a>
